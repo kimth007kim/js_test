@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS_BOX_POSITION</title>
+    <style>
+      .box {
+        margin-top: 30px;
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: red;
+        color: white;
+      }
+
+      #a1 {
+        margin-top: 100px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: blue;
+      }
+      #a2 {
+        position: relative;
+        top: 20px;
+        left: 20px;
+        background: yellow;
+      }
+      #a4 {
+        margin-bottom: 100px;
+      }
+    </style>
+  </head>
+  <body scroll="no">
+    <h4>CSS_BOX_POSITION</h4>
+    <h3>박스위치 지정</h3>
+    <hr />
+    <div id="a4"></div>
+    <div class="box" id="a1"></div>
+    <div class="box" id="a2">absolute</div>
+    <div class="box" id="a3">relative</div>
+    <hr />
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>중간정리 : 유수봉(202001234)-JS_HEADER01.html</title>
+    <style>
+      div {
+        display: inline-block;
+        height: 30px;
+        width: 100px;
+        border: 1px solid lightgray;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        background: orange;
+        border-radius: 20px 20px 0px 0px;
+        border-style: dotted;
+        box-shadow: 2px 2px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+      }
+
+      #down:hover {
+        position: relative;
+        left: 10px;
+        top: 10px;
+        background: rgba(161, 147, 240, 0.705);
+      }
+
+      #up:hover {
+        position: relative;
+        right: 5px;
+        bottom: 5px;
+        background: rgb(160, 241, 9);
+      }
+    </style>
+    <style>
+      #fixed {
+        position: fixed;
+        bottom: 5px;
+        right: 10px;
+        width: 200px;
+        padding: 5px;
+        background: red;
+        color: white;
+      }
+
+      #fixed0 {
+        position: fixed;
+        top: 5px;
+        right: 10px;
+        width: 200px;
+        padding: 5px;
+        background: red;
+        color: white;
+        border-radius: 0px 0px 20px 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>HEADER</h3>
+    201532003 김경동<br />
+    <hr />
+    <div id="up">
+      <a href="JS_LEFT_Me.html" target="left" title="나는 누구인가 ?">Me </a>
+    </div>
+    <div id="up">
+      <a href="JS_LEFT_HTML.html" target="left" title="웹 페이지  관련 정보"
+        >HTML
+      </a>
+    </div>
+    <div id="up">
+      <a href="JS_LEFT_CSS.html" target="left" title="스타일  관련 정보"
+        >CSS3
+      </a>
+    </div>
+    <div id="down">
+      <a href="JS_LEFT_JS.html" target="left" title="자바스크립트 관련 정보"
+        >JS
+      </a>
+    </div>
+
+    <div id="fixed0">중간보고용 샘플</div>
+  </body>
+</html>
