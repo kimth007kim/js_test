@@ -1,1 +1,108 @@
-Fibonacci Sequence
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>JS_Fibonacci_Sequence</title>
+  </head>
+
+  <body>
+    JS_Ex_Fibonacci_Sequence(100)
+    <hr />
+    <pre>
+        1~100 사이의 피보나치 수열과 그 개수를 출력하시오.
+</pre
+    >
+    <input type="button" id="code1" value="코드-1" />
+    <input type="button" id="result1" value="실행-1" />
+    <input type="button" id="code2" value="코드-2" />
+    <input type="button" id="result2" value="실행-2" />
+    <p id="output">?</p>
+  </body>
+</html>
+<script language="javascript">
+  var number = 0;
+  code1.onclick = function () {
+    output.innerHTML = "getFibonacci(100) Code-1<hr>";
+    output.innerHTML += "let i = 0;";
+    output.innerHTML += "let value1 = 0;";
+    output.innerHTML += "let value2 = 1;";
+    output.innerHTML += "let result = [];";
+    output.innerHTML += "while (i < num) {";
+    output.innerHTML += "let newValue = value1 + value2;";
+    output.innerHTML += "if (newValue < 100) {";
+    output.innerHTML += " result.push(newValue);";
+    output.innerHTML += " value1 = value2;";
+    output.innerHTML += "value2 = newValue; ";
+    output.innerHTML += " i++;";
+    output.innerHTML += " number++;";
+    output.innerHTML += " } else {";
+    output.innerHTML += "  return result.toString(); ";
+    output.innerHTML += " } ";
+    output.innerHTML += "} ";
+    output.innerHTML += "} ";
+  };
+  result1.onclick = function () {
+    alert("getFibonacci(100)의 결과는 " + getFibonacci(100) + "입니다.");
+    output.innerHTML = "getFibonacci(100) Result-1 <hr>";
+    output.innerHTML +=
+      "getFibonacci(100) 실행 결과" + getFibonacci(100) + " 입니다.<br>";
+    output.innerHTML += "그리고 개수는" + number / 2 + "개 입니다.";
+    number = 0;
+  };
+  code2.onclick = function () {
+    output.innerHTML = "getFibonacci(100) Code-2<hr>";
+    output.innerHTML += "confirm(getFibonacci(100);";
+    output.innerHTML += "function getFibonacci(num) {;";
+    output.innerHTML += "let i = 0;";
+    output.innerHTML += "let value1 = 0;";
+    output.innerHTML += "let value2 = 1;";
+    output.innerHTML += "let result = [];";
+    output.innerHTML += "while (i < num) {";
+    output.innerHTML += "let newValue = value1 + value2;";
+    output.innerHTML += "if (newValue < 100) {";
+    output.innerHTML += " result.push(newValue);";
+    output.innerHTML += " value1 = value2;";
+    output.innerHTML += "value2 = newValue; ";
+    output.innerHTML += " i++;";
+    output.innerHTML += " number++;";
+    output.innerHTML += " } else {";
+    output.innerHTML += "  return result.toString(); ";
+    output.innerHTML += " } ";
+    output.innerHTML += "} ";
+    output.innerHTML += "} ";
+  };
+  result2.onclick = function () {
+    confirm(
+      "getFibonacci(100)의 결과는 " +
+        getFibonacci(100) +
+        "입니다." +
+        "그리고 개수는" +
+        number +
+        "개 입니다."
+    );
+    output.innerHTML = "getFibonacci(100) Result-2 <hr>";
+    output.innerHTML += "Confirm() 다이얼로그 이용하여 결과를 표시합니다.<br>";
+    number = 0;
+  };
+
+  function getFibonacci(num) {
+    let i = 0;
+    let value1 = 0;
+    let value2 = 1;
+    let result = [];
+    while (i < num) {
+      let newValue = value1 + value2;
+      if (newValue < 100) {
+        result.push(newValue);
+        value1 = value2;
+        value2 = newValue;
+        i++;
+        number++;
+      } else {
+        return result.toString();
+      }
+    }
+    // return result.toString();
+  }
+</script>

@@ -1,1 +1,227 @@
-scorereport
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Score Report</title>
+    <style>
+      td {
+        text-align: center;
+        padding: 5px;
+        height: 15px;
+        width: 70px;
+      }
+      thead,
+      tfoot {
+        background: darkgray;
+        color: yellow;
+      }
+      tbody tr:nth-child(even) {
+        background: aliceblue;
+      } /* 짝수 <tr>에 적용*/
+      tbody tr:hover {
+        background: pink;
+      } /* 마우스가 올라오면 pink 배경 */
+    </style>
+  </head>
+
+  <body>
+    <h1 title="기말 과제용 셈플 코드입니다.">김경동의 성적처리 2020</h1>
+    <hr />
+    <table>
+      <tr>
+        <th>이름</th>
+        <th>학번</th>
+        <th>국어</th>
+        <th>영어</th>
+        <th>수학</th>
+        <td colspan="2"></td>
+      </tr>
+      <tr>
+        <td><input type="text" id="_name" size="6" value="김경동" /></td>
+        <td><input type="text" id="_sid" size="10" value="20180530" /></td>
+        <td><input type="text" id="_kor" size="3" value="77" /></td>
+        <td><input type="text" id="_eng" size="3" value="88" /></td>
+        <td><input type="text" id="_mat" size="3" value="99" /></td>
+        <td><input type="button" id="_Save" value="저장" /></td>
+        <td><input type="button" id="_Delete" value="삭제" /></td>
+      </tr>
+    </table>
+
+    <hr />
+    <div id="_area">## 성적 자료 영역 ##</div>
+    <hr />
+    <input type="button" id="_Report1" value="보고서#1(점수순)" />
+    <input type="button" id="_Report2" value="보고서#2(이름순)" />
+    <input type="button" id="_Report3" value="보고서#3(요약표)" />
+    <input type="button" id="_Report4" value="보고서#4(그래프)" />
+    <hr />
+    <div id="_report">## 보고서 영역 ##</div>
+    <hr />
+  </body>
+</html>
+
+<script>
+  var Save = document.getElementById("_Save");
+  var Delete = document.getElementById("_Delete");
+  var Report1 = document.getElementById("_Report1");
+  var Report2 = document.getElementById("_Report2");
+  var Report3 = document.getElementById("_Report3");
+  var Report4 = document.getElementById("_Report4");
+
+  var name = document.getElementById("_name").value;
+  var sid = document.getElementById("_sid").value;
+  var kor = Number(document.getElementById("_kor").value);
+  var eng = Number(document.getElementById("_eng").value);
+  var mat = Number(document.getElementById("_mat").value);
+
+  var area = document.getElementById("_area");
+  var report = document.getElementById("_report");
+
+  var Student = [];
+  var idx = 0;
+
+  Save.onclick = function () {
+    var name = document.getElementById("_name").value;
+    var sid = document.getElementById("_sid").value;
+    var kor = Number(document.getElementById("_kor").value);
+    var eng = Number(document.getElementById("_eng").value);
+    var mat = Number(document.getElementById("_mat").value);
+    var Ssum = kor + eng + mat;
+    var Savg = Ssum / 3;
+
+    Student[idx] = {
+      name: document.getElementById("_name").value,
+      sid: document.getElementById("_sid").value,
+      kor: Number(document.getElementById("_kor").value),
+      eng: Number(document.getElementById("_eng").value),
+      mat: Number(document.getElementById("_mat").value),
+      sum: Ssum,
+      avg: Savg,
+    };
+    var List = "";
+
+    List += "<Table><thead>";
+    List +=
+      "<tr><th>이름</th><th>학번</th><th>국어</th><th>영어</th><th>수학</th><th>합계</th><th>평균</th></tr></thead>";
+
+    for (var R = 0; R < Student.length; R++) {
+      List += "<TR><TD>";
+      List += Student[R].name + "</TD><TD>";
+      List += Student[R].sid + "</TD><TD>";
+      List += Student[R].kor + "</TD><TD>";
+      List += Student[R].eng + "</TD><TD>";
+      List += Student[R].mat + "</TD><TD>";
+      List += Student[R].sum + "</td><td>";
+      List += Student[R].avg + "</td>";
+    }
+    List +=
+      "<tfoot><tr><td colspan=5> 전체 데이터 : " +
+      Student.length +
+      " 개 </td><td></td><td></td></tr></tfoot>";
+    List += "</Table><br>";
+
+    area.innerHTML = List;
+    idx++;
+  };
+
+  Delete.onclick = function () {
+    var List = "";
+    Student.pop();
+    List += "<Table><thead>";
+    List +=
+      "<tr><th>이름</th><th>학번</th><th>국어</th><th>영어</th><th>수학</th><th>합계</th><th>평균</th></tr></thead>";
+    for (var R = 0; R < Student.length; R++) {
+      List += "<TR><TD>";
+      List += Student[R].name + "</TD><TD>";
+      List += Student[R].sid + "</TD><TD>";
+      List += Student[R].kor + "</TD><TD>";
+      List += Student[R].eng + "</TD><TD>";
+      List += Student[R].mat + "</TD><TD>";
+      List += Student[R].sum + "</td><td>";
+      List += Student[R].avg + "</td>";
+    }
+    List +=
+      "<tfoot><tr><td colspan=5> 전체 데이터 : " +
+      Student.length +
+      " 개 </td><td></td><td></td></tr></tfoot>";
+    List += "</Table><br>";
+
+    area.innerHTML = List;
+    idx--;
+  };
+
+  Report1.onclick = function () {
+    var List = "<h3> 김경동의 보고서#1(성적순)</h3><hr>";
+
+    Student = Student.sort(function (left, right) {
+      return left.sum - right.sum;
+    });
+    List += "<Table><thead>";
+    List +=
+      "<tr><th>이름</th><th>학번</th><th>국어</th><th>영어</th><th>수학</th><th>합계</th><th>평균</th></tr></thead>";
+    for (var R = Student.length - 1; R >= 0; R--) {
+      List += "<TR><TD>";
+      List += Student[R].name + "</TD><TD>" + Student[R].sid + "</TD><TD>";
+      List +=
+        Student[R].kor +
+        "</TD><TD>" +
+        Student[R].eng +
+        "</TD><TD>" +
+        Student[R].mat +
+        "</td><TD>" +
+        Student[R].sum +
+        "</td><TD>" +
+        Student[R].avg +
+        "</TD></TR>";
+    }
+    List +=
+      "<tfoot><tr><td colspan=5> 전체 데이터 : " +
+      Student.length +
+      " 개 </td><td></td><td></td></tr></tfoot>";
+    List += "</Table><br>";
+    List += "<hr>";
+
+    report.innerHTML = List;
+  };
+
+  Report2.onclick = function () {
+    var List = "<h3> 김경동의 보고서#1(이름순)</h3><hr>";
+
+    Student = Student.sort(function (a, b) {
+      return a.name > b.name ? -1 : a.name < b.name ? 1 : 0;
+    });
+    List += "<Table><thead>";
+    List +=
+      "<tr><th>이름</th><th>학번</th><th>국어</th><th>영어</th><th>수학</th><th>합계</th><th>평균</th></tr></thead>";
+    for (var R = Student.length - 1; R >= 0; R--) {
+      List += "<TR><TD>";
+      List += Student[R].name + "</TD><TD>" + Student[R].sid + "</TD><TD>";
+      List +=
+        Student[R].kor +
+        "</TD><TD>" +
+        Student[R].eng +
+        "</TD><TD>" +
+        Student[R].mat +
+        "</td><TD>" +
+        Student[R].sum +
+        "</td><TD>" +
+        Student[R].avg +
+        "</TD></TR>";
+    }
+    List +=
+      "<tfoot><tr><td colspan=5> 전체 데이터 : " +
+      Student.length +
+      " 개 </td><td></td><td></td></tr></tfoot>";
+    List += "</Table><br>";
+    List += "<hr>";
+
+    report.innerHTML = List;
+  };
+  Report3.onclick = function () {
+    var x = Math.max.apply(null, Student.sum);
+
+    // var sname = Student[1].name;
+    // report.innerHTML = "가장 성적이 높은 학생은" + sname + "입니다";
+    report.innerHTML = x;
+  };
+</script>

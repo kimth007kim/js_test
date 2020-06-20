@@ -1,0 +1,202 @@
+------------------------첫번째 줄-------------------------------------------------------
+Web Server#1
+
+CPU 2.2GHz*14core*2ea
+RAM 256GB
+HDD 300GB*4
+VM1 
+Redhat
+EMP/ETM
+VM2
+Redhat
+EMP/ETM
+VM3
+CentOS
+안보임
+new
+upgrade
+
+Web Server#2
+
+CPU 2.2GHz*14core*2ea
+RAM 256GB
+HDD 300GB*4
+안보임
+new
+
+
+EMP WAS Server#1
+DELL
+CPU 2.2GHz*14core*4ea
+RAM 512GB
+HDD 300GB*4
+VM1 
+Redhat
+EMP#1
+VM2
+Redhat
+ETM#1
+VM3
+RedHat
+안보임
+Reinstall/upgrade
+
+EMP WAS Server#2
+DELL
+CPU 2.2GHz*14core*4ea
+RAM 512GB
+HDD 300GB*4
+VM1 
+Redhat
+EMP#2
+VM2
+Redhat
+ETM#2
+VM3
+RedHat
+안보임
+Reinstall/upgrade/Relocate
+new
+
+EISVO WAS Server #1
+
+CPU 2.2GHz*14core*2ea
+RAM 384GB
+HDD 300GB*4
+VM1
+CentOS 
+VM2
+CentOS
+VM3 
+CentOS
+VM4 
+CentOS
+안보임
+new
+
+EISVO WAS Server #2
+
+CPU 2.2GHz*14core*2ea
+RAM 384GB
+HDD 300GB*4
+VM1
+CentOS
+안보임
+VM2
+CentOS
+안보임
+VM3 
+CentOS
+안보임
+VM4 
+CentOS
+안보임
+new
+
+EISVO WAS Server #3
+
+CPU 2.2GHz*14core*2ea
+RAM 384GB
+HDD 300GB*4
+VM1
+CentOS
+안보임
+VM2
+CentOS
+안보임
+VM3 
+CentOS
+안보임
+VM4 
+CentOS
+안보임
+new
+
+
+------------------------두번째 줄-------------------------------------------------------
+
+upgrade
+DELL
+CPU 2.2GHz*14core*2ea
+RAM 256GB
+HDD 300GB*4
+VM1
+Redhat
+Oracle
+Database Server
+
+new
+CPU 2.1GHz*4core*1ea
+RAM 32GB
+HDD 2TB*2
+OS
+AIX
+
+EISVO HMC
+
+new
+CPU 3.8GHz*4core*1ea
+RAM 256GB
+HDD 1.55TB*4(SSD)
+VM1
+Power VM
+DB2
+VM2
+Power VM
+DB2
+EISVO Database Server#1
+(Active)
+
+new
+CPU 3.8GHz*4core*1ea
+RAM 256GB
+HDD 1.55TB*4(SSD)
+VM1
+Power VM
+DB2
+VM2
+Power VM
+DB2
+EISVO Database Server#2
+(Active)
+
+------------------------세번째 줄-------------------------------------------------------
+
+Reconfig
+DELL
+CPU 2.2GHz*10core*2ea
+RAM 64GB
+HDD 300GB*2
+OS Windows
+SMS
+
+Reconfig
+DELL
+CPU 2.2GHz*10core*2ea
+RAM 64GB
+HDD 300GB*2
+OS Windows
+NMS
+
+Reconfig
+DELL
+CPU 2.2GHz*10core*2ea
+RAM 64GB
+HDD 300GB*2 10T*6
+OS Windows
+Backup
+
+Extension
+UNITY 500
+Disk 1.8TB*70EA
+Raid S
+Data Storage
+
+new
+용량 50Slot*40Cartridge
+LTO or VTL Storage
+
+Extension
+MDS9148S
+Port 24
+SAN Switch #1,2

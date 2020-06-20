@@ -22,15 +22,23 @@
 
     // ㄱ
 
+    // context.beginPath();
+    // context.lineWidth = 10;
+    // context.strokeStyle = "black";
+    // context.moveTo(60, 150);
+    // context.lineTo(120, 150);
+
+    // context.moveTo(120, 150);
+    // context.lineTo(60, 200);
+    // context.stroke();
+
     context.beginPath();
-    context.lineWidth = 10;
-    context.strokeStyle = "black";
     context.moveTo(60, 150);
     context.lineTo(120, 150);
-
-    context.moveTo(120, 150);
-    context.lineTo(60, 200);
-    context.stroke();
+    context.lineTo(120, 200);
+    context.closePath();
+    context.fillStyle = "blue";
+    context.fill();
 
     //ㅣ
 

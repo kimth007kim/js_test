@@ -2,18 +2,56 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>JS_Ex_Sum(100)</title>
   </head>
+
   <body>
+    JS_Ex_Sum(100)
     <hr />
-    <button onclick="code_1()">코드-1</button>
-    <button onclick="code_2()">코드-2</button>
-    <button onclick="code_3()">코드-3</button>
-    <button onclick="code_4()">코드-4</button>
-    <hr />
-    <script>
-      function conde_1() {}
-    </script>
+    <pre>
+        1부터 100까지 합을 구하는 JavaScript 를 작성하시오.
+</pre
+    >
+    <input type="button" id="code1" value="코드-1" />
+    <input type="button" id="result1" value="실행-1" />
+    <input type="button" id="code2" value="코드-2" />
+    <input type="button" id="result2" value="실행-2" />
+    <p id="output">?</p>
   </body>
 </html>
+<script language="javascript">
+  code1.onclick = function () {
+    output.innerHTML = "SUM(100) Code-1<hr>";
+    output.innerHTML += "var SUM=0;<br>";
+    output.innerHTML += "for(var N=1;N<=100;N++) {<br>";
+    output.innerHTML += "SUM=SUM+N;<br>";
+    output.innerHTML += "}<br>";
+  };
+  result1.onclick = function () {
+    alert("Sum(100)의 결과는 " + SUM() + "입니다.");
+    output.innerHTML = "SUM(100) Result-1 <hr>";
+    output.innerHTML += "SUM(100) 실행 결과" + SUM() + " 입니다.<br>";
+  };
+  code2.onclick = function () {
+    output.innerHTML = "SUM(100) Code-2<hr>";
+    output.innerHTML += "confirm( SUM(100));<br>";
+    output.innerHTML += "function SUM(100) { <br>";
+    output.innerHTML += "var SUM=0;<br>";
+    output.innerHTML += "for(var N=1;N<=100;N++) {<br>";
+    output.innerHTML += "SUM=SUM+N;<br>";
+    output.innerHTML += "}<br>}<br>";
+  };
+  result2.onclick = function () {
+    confirm("Sum(100)의 결과는 " + SUM() + "입니다.");
+    output.innerHTML = "SUM(100) Result-2 <hr>";
+    output.innerHTML += "Confirm() 다이얼로그 이용하여 결과를 표시합니다.<br>";
+  };
+  function SUM() {
+    var SUM = 0;
+    for (var N = 1; N <= 100; N++) {
+      SUM = SUM + N;
+    }
+    return SUM;
+  }
+</script>

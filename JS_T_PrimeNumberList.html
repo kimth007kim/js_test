@@ -1,1 +1,87 @@
-PrimeNumberList
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>JS_Ex_PrimeNumber()</title>
+  </head>
+
+  <body>
+    JS_Ex_PrimeNumber
+    <hr />
+    <pre>
+        1부터 100까지 소수를 구하시오
+</pre
+    >
+    <input type="button" id="code1" value="코드-1" />
+    <input type="button" id="result1" value="실행-1" />
+    <input type="button" id="code2" value="코드-2" />
+    <input type="button" id="result2" value="실행-2" />
+    <p id="output">?</p>
+  </body>
+</html>
+<script language="javascript">
+  var nim = 0;
+  code1.onclick = function () {
+    output.innerHTML = "PrimeNumber() Code-1<hr>";
+    output.innerHTML += " var results = [];<br>";
+    output.innerHTML += " for (let i = 1; i <= 100; i++) {<br>";
+    output.innerHTML += "   let isPrimeNumber = true;<br>";
+    output.innerHTML += "   for (let j = 2; j < i; j++) {<br>";
+    output.innerHTML += "       if (i % j === 0) {<br>";
+    output.innerHTML += "           isPrimeNumber = false;<br>";
+    output.innerHTML += "       }<br>";
+    output.innerHTML += "   }<br>";
+    output.innerHTML += "   if (isPrimeNumber) {<br>";
+    output.innerHTML += "       results.push(i);<br>";
+    output.innerHTML += "   }<br>";
+    output.innerHTML += "}<br>";
+  };
+  result1.onclick = function () {
+    alert(PrimeNumber());
+    output.innerHTML = "PrimeNumber() Result-1 <hr>";
+    output.innerHTML +=
+      "PrimeNumber() 실행 결과" + PrimeNumber() + " 입니다.<br>";
+    output.innerHTML += "그리고 개수는" + nim / 2 + "개 입니다.<br>";
+    nim = 0;
+  };
+  code2.onclick = function () {
+    output.innerHTML = "PrimeNumber() Code-2<hr>";
+    output.innerHTML += "confirm( PrimeNumber());<br>";
+    output.innerHTML += " var results = [];<br>";
+    output.innerHTML += " for (let i = 1; i <= 100; i++) {<br>";
+    output.innerHTML += "   let isPrimeNumber = true;<br>";
+    output.innerHTML += "   for (let j = 2; j < i; j++) {<br>";
+    output.innerHTML += "       if (i % j === 0) {<br>";
+    output.innerHTML += "           isPrimeNumber = false;<br>";
+    output.innerHTML += "       }<br>";
+    output.innerHTML += "   }<br>";
+    output.innerHTML += "   if (isPrimeNumber) {<br>";
+    output.innerHTML += "       results.push(i);<br>";
+    output.innerHTML += "   }<br>";
+    output.innerHTML += "}<br>";
+  };
+  result2.onclick = function () {
+    confirm("PrimeNumber()의 결과는 " + PrimeNumber() + "입니다.");
+    output.innerHTML = "PrimeNumber() Result-2 <hr>";
+    output.innerHTML += "Confirm() 다이얼로그 이용하여 결과를 표시합니다.<br>";
+  };
+  function PrimeNumber() {
+    var results = [];
+    for (let i = 1; i <= 100; i++) {
+      let isPrimeNumber = true;
+
+      for (let j = 2; j < i; j++) {
+        if (i % j === 0) {
+          isPrimeNumber = false;
+        }
+      }
+      if (isPrimeNumber) {
+        results.push(i);
+        nim++;
+      }
+    }
+
+    return results;
+  }
+</script>

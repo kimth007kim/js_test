@@ -1,1 +1,65 @@
-Factorial10
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS_Ex_Factorial(10)</title>
+  </head>
+
+  <body>
+    JS_Ex_Factorial(10)
+    <hr />
+    <pre>
+        1부터 10까지 곱(Factorial)을 구하는 JavaScript 를 작성하시오.
+</pre
+    >
+    <input type="button" id="code1" value="코드-1" />
+    <input type="button" id="result1" value="실행-1" />
+    <input type="button" id="code2" value="코드-2" />
+    <input type="button" id="result2" value="실행-2" />
+    <p id="output">?</p>
+  </body>
+</html>
+<script language="javascript">
+  var code1 = document.getElementById("code1");
+
+  code1.onclick = function () {
+    output.innerHTML = "Factorial(10) Code-1<hr>";
+    output.innerHTML += "<pre>var F=1;</pre>";
+    output.innerHTML += "<pre>for(var K=1; K<=10; K++) {</pre>";
+    output.innerHTML += "<pre>  F = F * K;</pre>";
+    output.innerHTML += "<pre>}</pre><hr>";
+  };
+  result1.onclick = function () {
+    output.innerHTML = "Factorial_1(10) Result-1 <hr>";
+    output.innerHTML +=
+      "Factorisal_1(10) 실행 결과" + Factorial_1(10) + " 입니다.<hr>";
+  };
+  code2.onclick = function () {
+    output.innerHTML = "Factorial_2(10) Code-2 (재귀 함수 사용)<hr>";
+    output.innerHTML += "<pre>Factorial_2(10);</pre>";
+    output.innerHTML += "<pre>  function Factorial_2(N) {</pre>";
+    output.innerHTML += "<pre>  if (N == 0)</pre>";
+    output.innerHTML += "<pre>      return 1;</pre>";
+    output.innerHTML += "<pre>  else</pre>";
+    output.innerHTML += "<pre>      return N * factorial_2(N - 1);</pre>";
+    output.innerHTML += "<pre>  }</pre><hr>";
+  };
+
+  result2.onclick = function () {
+    output.innerHTML = "Factorial_2(10) Result-2 (재귀 함수 사용)<hr>";
+    output.innerHTML += "Factorial_2(10) = " + Factorial_2(10) + " 입니다.<hr>";
+    output.innerHTML += "Confirm() 다이얼로그 이용하여 결과를 표시합니다.<hr>";
+    confirm(Factorial_2(10));
+  };
+  function Factorial_1(N) {
+    var F = 1;
+    for (var K = 1; K <= N; K++) {
+      F = F * K;
+    }
+    return F;
+  }
+  function Factorial_2(N) {
+    if (N == 0) return 1;
+    else return N * Factorial_2(N - 1);
+  }
+</script>
